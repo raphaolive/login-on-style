@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,400&family=Raleway:wght@100;500;600;900&display=swap");
+
+:root {
+  --pink-50: #fb03ff;
+  --pink-100: #cb1dce;
+  --pink-200: #842485;
+  --pink-250: #722373;
+  --purple-50: #721d99;
+  --purple-100: #2a286b;
+  --blue-100: #0b81db;
+  --blue-200: #0772c3;
+  --blue-300: #115e99;
+  --blue-400: #214f8f;
+  --white-50: #f0ecf3;
+  --white-100: #b6b6b6;
+  --gray-200: #909090dd;
+  --gray-100: #5f5f5fdd;
+  --gray-300: #434343dd;
+  --gray-600: #303030dd;
+  --gray-900: #222222dd;
+  --gradient: linear-gradient(
+    60deg,
+    var(--pink-200),
+    var(--purple-50),
+    var(--purple-100)
+  );
+  --gradient-2: linear-gradient(60deg, var(--pink-50), var(--purple-50));
+  --white-gradient: linear-gradient(60deg, var(--white-50), var(--white-100));
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+#content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient);
+}
+
+#container {
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  display: flex;
+  height: 600px;
+  box-shadow: 5px 5px 5px 0.5px rgba(0, 0, 0, 0.254);
+}
+
+#logoSide {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#logoSide h1 {
+  font-size: 30px;
+}
+
+#logoSide p {
+  color: var(--pink-50);
+  font-size: 12px;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  animation-name: spin;
+  animation-duration: 30000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  form {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#formSide {
+  padding: 30px 50px;
+  color: var(--gray-900);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.light-form {
+  background-color: var(--white-50);
+}
+
+.dark-form {
+  background-color: var(--gray-600);
+}
+
+.dark-form h1,
+.dark-form i,
+.dark-form input,
+.dark-form #text   {
+  color: var(--white-50);
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+
+#header h1 {
+  font-size: 30px;
+  position: relative;
+}
+
+#header h1::before {
+  position: absolute;
+  content: "";
+  background-color: var(--pink-200);
+  height: 4px;
+  width: 22%;
+  bottom: 5px;
+  border-radius: 4px;
+}
+
+#header i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  position: relative;
+  margin-top: 10px;
+}
+
+.form-label {
+  position: absolute;
+  font-size: 14px;
+  left: 0;
+  top: 10px;
+  color: var(--gray-100);
+  z-index: 10;
+  transition: transform 150ms ease-out, font-size 150ms ease-out;
+}
+
+.focused .form-label {
+  transform: translateY(-100%);
+  font-size: 10px;
+}
+
+.form-input {
+  position: relative;
+  padding: 10px 0px 5px 0px;
+  outline: 0;
+  border: 0;
+  margin: 5px 0px;
+  box-shadow: 0 1px 0 0 #999999;
+  background: none;
+  transition: box-shadow 150ms ease-in-out;
+}
+
+.form-input:focus {
+  box-shadow: 0 2px 0 0 var(--gray-200);
+}
+
+.dark-form .form-input:focus {
+  box-shadow: 0 2px 0 0 var(--white-100);
+}
+
+.form-button {
+  margin-top: 30px;
+  border: none;
+  background-color: var(--pink-200);
+  color: white;
+}
+
+.form-button:hover {
+  background-color: var(--pink-250);
+}
+
+#text {
+  color: var(--gray-50);
+  font-size: 12px;
+}
+
+button {
+  width: 100%;
+  font-size: 12px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.media-button {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#googleBtn {
+  background-color: var(--blue-100);
+}
+
+#googleBtn:hover {
+  background-color: var(--blue-200);
+}
+
+#facebookBtn {
+  background-color: var(--blue-300);
+}
+
+#facebookBtn:hover {
+  background-color: var(--blue-400);
+}
